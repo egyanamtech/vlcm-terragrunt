@@ -2,14 +2,14 @@ locals {
   env         = path_relative_to_include()
   bucket_name = "vlcm-svc-bootstrap"
   profile     = "msyt1969__terraform"
-  kms_key     = "ed16e441-a506-4553-8d36-710baaabe11d"
+  kms_key     = "054d0880-eabc-42b9-ae5d-b4cdd7bbfc3b"
   lock_table  = "vlcm-svc-bootstrap-lock"
   aws_region  = "ap-south-1"
   repository_url = {
     "backend"    = "261508060912.dkr.ecr.ap-south-1.amazonaws.com/vlcm-backend",
     "nginx"  = "261508060912.dkr.ecr.ap-south-1.amazonaws.com/vlcm-nginx",
   }
-  cert_arn = "arn:aws:acm:ap-south-1:261508060912:certificate/6f95efaa-bf92-47c4-8c93-2e69d38b790a"
+  cert_arn = "arn:aws:acm:ap-south-1:261508060912:certificate/12677175-3a05-4fe4-b51a-9c1e930bb6b2"
   site_domain = "imparham.in"
   aws_account_id = "261508060912"
 }
