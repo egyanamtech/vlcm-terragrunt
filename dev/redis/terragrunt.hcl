@@ -3,7 +3,7 @@ include {
 }
 terraform {
     # source = "../redis"
-    source ="git::ssh://git@github.com/egyanamtech/vlcm-terraform.git//redis?ref=v0.0.2"
+    source ="git::ssh://git@github.com/egyanamtech/vlcm-terraform.git//redis?ref=v0.0.3"
 }
 
 inputs = {
