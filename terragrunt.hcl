@@ -29,6 +29,18 @@ provider "aws" {
 EOF
 }
 
+
+# Generate an AWS provider block
+generate "backend" {
+  path      = "backend.tf"
+  if_exists = "overwrite_terragrunt"
+  contents  = <<EOF
+terraform {
+  backend "s3" {}
+}
+EOF
+}
+
 inputs = merge(
   local.common.locals,
   local.account.locals,
