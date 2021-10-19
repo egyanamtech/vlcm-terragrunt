@@ -10,9 +10,9 @@ remote_state {
   config = {
     encrypt         = true
     region          = local.region.locals.aws_region
-    bucket          = "terraform-state-${local.common.locals.app_name}-${local.account.locals.aws_account_id}"
+    bucket          = "${local.common.locals.app_name}-${local.account.locals.aws_account_id}-tfstate"
     key             = "${path_relative_to_include()}/terraform.tfstate"
-    dynamodb_table  = "terraform-locks-${local.common.locals.app_name}-${local.account.locals.aws_account_id}"
+    dynamodb_table  = "${local.common.locals.app_name}-${local.account.locals.aws_account_id}-lock"
   }
 }
 
@@ -29,29 +29,36 @@ provider "aws" {
 EOF
 }
 
+inputs = merge(
+  local.common.locals,
+  local.account.locals,
+  local.region.locals,
+  local.environment.locals
+)
+
 ### Old one
-remote_state {
-  backend = "s3"
-  generate = {
-    path      = "backend.tf"
-    if_exists = "overwrite_terragrunt"
-  }
-  config = {
-    bucket         = local.bucket_name
-    key            = "${local.env}/terraform.tfstate"
-    region         = local.aws_region
-    encrypt        = true
-    profile        = local.profile
-    dynamodb_table = local.lock_table
-  }
-}
-generate "provider" {
-  path      = "provider.tf"
-  if_exists = "overwrite_terragrunt"
-  contents  = <<EOF
-provider "aws" {
-  region  = "${local.aws_region}"
-  profile = "${local.profile}"
-}
-EOF
-}
+# remote_state {
+#   backend = "s3"
+#   generate = {
+#     path      = "backend.tf"
+#     if_exists = "overwrite_terragrunt"
+#   }
+#   config = {
+#     bucket         = local.bucket_name
+#     key            = "${local.env}/terraform.tfstate"
+#     region         = local.aws_region
+#     encrypt        = true
+#     profile        = local.profile
+#     dynamodb_table = local.lock_table
+#   }
+# }
+# generate "provider" {
+#   path      = "provider.tf"
+#   if_exists = "overwrite_terragrunt"
+#   contents  = <<EOF
+# provider "aws" {
+#   region  = "${local.aws_region}"
+#   profile = "${local.profile}"
+# }
+# EOF
+# }
