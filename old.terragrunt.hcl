@@ -1,16 +1,18 @@
 locals {
-  env         = path_relative_to_include()
+  # env         = path_relative_to_include()
   # bucket_name = "vlcm-svc-bootstrap"
   # profile     = "msyt1969__terraform"
-  kms_key     = "054d0880-eabc-42b9-ae5d-b4cdd7bbfc3b"
+  # I think kms_key is not being used
+  # I think we can safely remove this
+  #  kms_key     = "054d0880-eabc-42b9-ae5d-b4cdd7bbfc3b"
   # lock_table  = "vlcm-svc-bootstrap-lock"
   # aws_region  = "ap-south-1"
   repository_url = {
-    "backend"    = "261508060912.dkr.ecr.ap-south-1.amazonaws.com/vlcm-backend",
-    "nginx"  = "261508060912.dkr.ecr.ap-south-1.amazonaws.com/vlcm-nginx",
+    "backend" = "261508060912.dkr.ecr.ap-south-1.amazonaws.com/vlcm-backend",
+    "nginx"   = "261508060912.dkr.ecr.ap-south-1.amazonaws.com/vlcm-nginx",
   }
   cert_arn = "arn:aws:acm:ap-south-1:261508060912:certificate/12677175-3a05-4fe4-b51a-9c1e930bb6b2"
-  site_domain = "imparham.in"
+  # site_domain = "imparham.in"
   # aws_account_id = "261508060912"
 }
 
@@ -21,8 +23,8 @@ inputs = {
   name           = split("/", local.env)[1]
   aws_profile    = local.profile
   repository_url = local.repository_url
-  cert_arn = local.cert_arn
-  site_domain = local.site_domain
+  cert_arn       = local.cert_arn
+  site_domain    = local.site_domain
   aws_account_id = local.aws_account_id
 }
 
