@@ -4,6 +4,7 @@ locals {
   common  = read_terragrunt_config(find_in_parent_folders("common.terragrunt.hcl"))
   account = read_terragrunt_config(find_in_parent_folders("account.terragrunt.hcl"))
   region  = read_terragrunt_config(find_in_parent_folders("region.terragrunt.hcl"))
+  
 
   # Configure environment
   environment = "dev"
@@ -16,8 +17,10 @@ locals {
   aws_account_id = local.account.locals.aws_account_id
   aws_region     = local.region.locals.aws_region
 
+  # THis is used in the ecs-service module, in the alb.tf file
+  # For giving a SSL cert to the Load Balancer
   cert_prefix = "arn:aws:acm:${local.aws_region}:${local.aws_account_id}:certificate"
-  cert_id     = "====================THIS NEEDS TO BE ADDED================="
+  cert_id     = "4ee26f4a-bd1c-4bb1-90f6-46aea02a72a6"
 
   cert_arn = "${local.cert_prefix}/${local.cert_id}"
   #   DB RELATED STUFF
