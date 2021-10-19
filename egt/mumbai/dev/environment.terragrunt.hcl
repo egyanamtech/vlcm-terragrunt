@@ -66,9 +66,8 @@ locals {
   repository_url = {
     "backend" = "${local.repository_prefix}/vlcm-backend",
     "nginx"   = "${local.repository_prefix}/vlcm-nginx",
-    # "cron"    = "${local.repository_prefix}/vlcm-backend",
+    "cron"    = "${local.repository_prefix}/vlcm-cron",
   }
-
   #service_configuration = {
   #    for service in ["frontend", "api"]:
   #        service => {
