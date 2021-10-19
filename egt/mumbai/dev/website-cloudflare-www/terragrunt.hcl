@@ -9,9 +9,9 @@ terraform {
 }
 
 inputs = {
-  subdomain = local.env.locals.eww_frontend_subdomain
+  subdomain = local.env.locals.www_frontend_subdomain
   cname     = dependency.website-cloudflare.outputs.endpoint
-  proxied   = local.env.locals.eww_frontend_proxied
+  proxied   = local.env.locals.www_frontend_proxied
   name = "website-cloudflare-www"
 }
 
