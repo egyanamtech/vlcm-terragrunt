@@ -7,6 +7,7 @@ locals {
 
   # Configure environment
   environment = "dev"
+  stage = local.environment
 
   site_domain = "imparham.in"
   site_prefix = "dev-"
