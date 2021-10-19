@@ -68,34 +68,4 @@ locals {
     "nginx"   = "${local.repository_prefix}/vlcm-nginx",
     "cron"    = "${local.repository_prefix}/vlcm-cron",
   }
-  #service_configuration = {
-  #    for service in ["frontend", "api"]:
-  #        service => {
-  #            url_prefix = service == "frontend" ? "" : format("%s/",service)
-  #            environment = concat([
-  #                for key, value in jsondecode(file(".${service}.environment.json")):
-  #                    {
-  #                        "name": key,
-  #                        "value": value["value"]
-  #                    }
-  #                ], [
-  #                    {
-  #                        "name": "ENVIRONMENT",
-  #                        "value": local.environment
-  #                    },
-  #                    {
-  #                        "name": "APP_DOMAIN_NAME",
-  #                        "value": local.app_domain_name
-  #                    },
-  #                ])
-  #            secrets = concat([
-  #                for key, value in jsondecode(file(".${service}.secrets.json")): 
-  #                        {
-  #                            "name": key,
-  #                            "valueFrom": "arn:aws:ssm:${local.aws_region}:${local.aws_account_id}:parameter/${local.parameter_group}/${service}/secrets/${key}"
-  #                        }
-  #                        if lookup(value, "alias", false) == false
-  #                ])
-  #        }
-  #}
 }
