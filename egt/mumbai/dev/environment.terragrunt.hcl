@@ -43,7 +43,7 @@ locals {
   frontend_proxied   = true
   frontend_subdomain = "${local.site_prefix}front"
 
-  # Cloudflare for frontend website with wwww stuff
+  # Cloudflare for frontend website with www stuff
   www_frontend_proxied   = true
   www_frontend_subdomain = "www-${local.site_prefix}front"
 
