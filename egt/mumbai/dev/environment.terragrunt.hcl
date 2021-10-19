@@ -47,6 +47,9 @@ locals {
   www_frontend_proxied   = true
   www_frontend_subdomain = "www-${local.site_prefix}front"
 
+  # Names of the S3 buckets that will hold the frontend stuff
+  www_bucket_name = "${local.www_frontend_subdomain}.${local.site_domain}"
+  bucket_name = "${local.frontend_subdomain}.${local.site_domain}"
 
   # Website Allowed origins
   allowed_origins = ["${local.api_subdomain}.${local.site_domain}"]
