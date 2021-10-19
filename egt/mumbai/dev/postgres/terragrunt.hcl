@@ -10,6 +10,7 @@ inputs = {
   vpc_cidr_block  = dependency.network.outputs.vpc_cidr
   vpc_id          = dependency.network.outputs.vpc_id
   db_subnet_group = dependency.network.outputs.database_subnet_group
+  name = "postgres"
 }
 
 dependency "network" {

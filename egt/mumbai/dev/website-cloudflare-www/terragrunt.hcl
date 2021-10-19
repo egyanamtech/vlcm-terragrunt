@@ -12,6 +12,7 @@ inputs = {
   subdomain = local.env.locals.eww_frontend_subdomain
   cname     = dependency.website-cloudflare.outputs.endpoint
   proxied   = local.env.locals.eww_frontend_proxied
+  name = "website-cloudflare-www"
 }
 
 dependency "website-cloudflare" {

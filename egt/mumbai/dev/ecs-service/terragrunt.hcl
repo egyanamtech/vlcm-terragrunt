@@ -7,6 +7,7 @@ terraform {
 }
 
 inputs = {
+    name = "ecs-service"
     environment = [
         {"name": "DJANGO_ALLOWED_HOSTS", "value": "'*'"},
         {"name": "DJANGO_SECRET_KEY", "value": "'insecure'"},

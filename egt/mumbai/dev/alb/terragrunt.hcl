@@ -11,6 +11,7 @@ inputs = {
     public_subnets = dependency.network.outputs.public_subnets
     vpc_id = dependency.network.outputs.vpc_id
     vpc_cidr_block = dependency.network.outputs.vpc_cidr
+    name = "alb"
 }
 
 dependency "network" {

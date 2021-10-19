@@ -12,6 +12,7 @@ inputs = {
     redis_subnet_group = dependency.network.outputs.elasticache_subnet_group
     redis_node_count = 1
     redis_instance_size = "cache.t2.micro"
+    name = "redis"
 }
 
 dependency "network" {

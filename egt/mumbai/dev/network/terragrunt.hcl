@@ -6,5 +6,6 @@ terraform {
     source ="git::ssh://git@github.com/egyanamtech/vlcm-terraform.git//network?ref=v0.0.3"
 }
 
-inputs = {
+inputs = { 
+    name = "network"
 }

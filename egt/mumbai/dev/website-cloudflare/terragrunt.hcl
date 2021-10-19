@@ -13,6 +13,7 @@ inputs = {
   subdomain = local.env.locals.frontend_subdomain
   cname     = dependency.website-s3.outputs.s3_website_cname
   proxied   = local.env.locals.frontend_proxied
+  name = "website-cloudflare"
 }
 
 dependency "website-s3" {

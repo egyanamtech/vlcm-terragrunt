@@ -11,4 +11,5 @@ terraform {
 
 inputs = {
   cluster_name = local.env.locals.ecs_cluster_name
+  name = "ecs-cluster"
 }

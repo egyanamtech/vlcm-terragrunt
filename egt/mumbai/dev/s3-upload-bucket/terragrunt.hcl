@@ -11,4 +11,5 @@ terraform {
 
 inputs = {
   bucket_prefix = local.env.locals.upload_bucket_prefix
+  name = "s3-upload-bucket"
 }

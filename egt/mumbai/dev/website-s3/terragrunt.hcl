@@ -13,4 +13,6 @@ terraform {
 inputs = {
   # allowed_origins = ["https://api.${include.site_domain}"]
   allowed_origins = local.env.locals.allowed_origins
+  name = "website-s3"
+
 }
