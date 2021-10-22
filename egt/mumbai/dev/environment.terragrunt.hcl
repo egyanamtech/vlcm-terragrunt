@@ -56,6 +56,8 @@ locals {
 
   # Name of ECS Cluster
   ecs_cluster_name = "${local.app_name}-cluster"
+  # Name of the ALB to be created
+  alb_name = "${local.app_name}-${local.environment}-${local.aws_region}-alb"
 
   #   Name of upload S3 bucket
   upload_bucket_prefix = "${local.app_name}-bucket"
