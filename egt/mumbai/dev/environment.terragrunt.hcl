@@ -55,7 +55,8 @@ locals {
   allowed_origins = ["${local.api_subdomain}.${local.site_domain}"]
 
   # Name of ECS Cluster
-  ecs_cluster_name = "${local.app_name}-cluster"
+  ecs_cluster_name = "${local.app_name}-${local.environment}-${local.aws_region}-cluster"
+
   # Name of the ALB to be created
   alb_name = "${local.app_name}-${local.environment}-${local.aws_region}-alb"
 
