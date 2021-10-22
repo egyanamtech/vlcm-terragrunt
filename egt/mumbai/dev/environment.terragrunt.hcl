@@ -64,6 +64,9 @@ locals {
 
   parameter_group = "${local.app_name}/${local.environment}"
 
+  # data for ECS Service
+  ecs_service_cpu_multiplier                 = 1
+  ecs_service_memory_multiplier              = 1
   repository_prefix = "${local.aws_account_id}.dkr.ecr.${local.aws_region}.amazonaws.com"
   repository_url = {
     "backend" = "${local.repository_prefix}/vlcm-backend",
