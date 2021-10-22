@@ -64,6 +64,9 @@ inputs = {
     s3_bucket_policy_arn = dependency.s3-upload.outputs.s3_policy_arn
   cpu_multiplier                 = local.env.locals.ecs_service_cpu_multiplier
   memory_multiplier              = local.env.locals.ecs_service_memory_multiplier
+  ecs_service_name               = local.env.locals.ecs_service_ecs_service_name
+  bootstrap_task_definition_name = local.env.locals.ecs_service_bootstrap_task_definition_name
+  task_definition_name           = local.env.locals.ecs_service_task_definition_name
 }
 
 dependency "ecs-cluster" {

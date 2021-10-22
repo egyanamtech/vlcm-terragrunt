@@ -67,6 +67,10 @@ locals {
   # data for ECS Service
   ecs_service_cpu_multiplier                 = 2
   ecs_service_memory_multiplier              = 1
+  ecs_service_ecs_service_name               = "${var.app_name}-${var.aws_region}-${var.environment}-service"
+  ecs_service_bootstrap_task_definition_name = "${var.app_name}-${var.aws_region}-${var.environment}-bootstrap-td"
+  ecs_service_task_definition_name           = "${var.app_name}-${var.aws_region}-${var.environment}-td"
+
   repository_prefix = "${local.aws_account_id}.dkr.ecr.${local.aws_region}.amazonaws.com"
   repository_url = {
     "backend" = "${local.repository_prefix}/vlcm-backend",
