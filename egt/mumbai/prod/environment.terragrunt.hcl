@@ -4,11 +4,11 @@ locals {
   common  = read_terragrunt_config(find_in_parent_folders("common.terragrunt.hcl"))
   account = read_terragrunt_config(find_in_parent_folders("account.terragrunt.hcl"))
   region  = read_terragrunt_config(find_in_parent_folders("region.terragrunt.hcl"))
-  
+
 
   # Configure environment
   environment = "prod"
-  stage = local.environment
+  stage       = local.environment
 
   site_domain = "imparham.in"
   site_prefix = ""
@@ -49,7 +49,7 @@ locals {
 
   # Names of the S3 buckets that will hold the frontend stuff
   www_bucket_name = "${local.www_frontend_subdomain}.${local.site_domain}"
-  bucket_name = "${local.site_domain}"
+  bucket_name     = local.site_domain
 
   # Website Allowed origins
   allowed_origins = ["${local.api_subdomain}.${local.site_domain}"]
