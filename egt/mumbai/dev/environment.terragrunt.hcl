@@ -61,7 +61,7 @@ locals {
   alb_name = "${local.app_name}-${local.environment}-${local.aws_region}-alb"
 
   #   Name of upload S3 bucket
-  upload_bucket_prefix = "${local.app_name}-bucket"
+  upload_bucket_prefix = "${local.app_name}-${local.environment}-${local.aws_region}-upload-bucket"
 
   parameter_group = "${local.app_name}/${local.environment}"
 
