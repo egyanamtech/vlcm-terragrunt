@@ -68,9 +68,9 @@ locals {
   # data for ECS Service
   ecs_service_cpu_multiplier                 = 1
   ecs_service_memory_multiplier              = 1
-  ecs_service_ecs_service_name               = "${var.app_name}-${var.aws_region}-${var.environment}-service"
-  ecs_service_bootstrap_task_definition_name = "${var.app_name}-${var.aws_region}-${var.environment}-bootstrap-td"
-  ecs_service_task_definition_name           = "${var.app_name}-${var.aws_region}-${var.environment}-td"
+  ecs_service_ecs_service_name               = "${local.app_name}-${local.aws_region}-${local.environment}-service"
+  ecs_service_bootstrap_task_definition_name = "${local.app_name}-${local.aws_region}-${local.environment}-bootstrap-td"
+  ecs_service_task_definition_name           = "${local.app_name}-${local.aws_region}-${local.environment}-td"
 
   repository_prefix = "${local.aws_account_id}.dkr.ecr.${local.aws_region}.amazonaws.com"
   repository_url = {
