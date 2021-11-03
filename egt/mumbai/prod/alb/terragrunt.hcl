@@ -15,6 +15,7 @@ inputs = {
   vpc_id         = dependency.network.outputs.vpc_id
   vpc_cidr_block = dependency.network.outputs.vpc_cidr
   alb_name       = local.env.locals.alb_name
+  name       = local.env.locals.alb_name
 }
 
 
