@@ -13,6 +13,7 @@ remote_state {
     bucket          = "${local.common.locals.app_name}-${local.account.locals.aws_account_id}-tfstate"
     key             = "${path_relative_to_include()}/terraform.tfstate"
     dynamodb_table  = "${local.common.locals.app_name}-${local.account.locals.aws_account_id}-lock"
+    profile         =  local.account.locals.aws_profile
   }
 }
 
