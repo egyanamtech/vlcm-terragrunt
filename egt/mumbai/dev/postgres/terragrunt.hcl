@@ -3,7 +3,7 @@ include {
 }
 terraform {
   # source = "../postgres"
-  source = "git::ssh://git@github.com/egyanamtech/vlcm-terraform.git//postgres?ref=v0.0.3"
+  source = "git::ssh://git@github.com/egyanamtech/vlcm-terraform.git//postgres?ref=v0.0.4"
 }
 
 inputs = {
