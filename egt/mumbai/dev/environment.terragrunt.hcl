@@ -38,6 +38,7 @@ locals {
   # Cloudflare for backend API stuff
   api_proxied   = false
   api_subdomain = "${local.site_prefix}api"
+  api_cloudflare_secret_name = "DEV_API_URL"
 
   # Cloudflare for frontend website stuff
   frontend_proxied   = true
