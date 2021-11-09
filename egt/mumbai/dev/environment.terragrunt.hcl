@@ -71,6 +71,9 @@ locals {
   ecs_service_ecs_service_name               = "${local.app_name}-${local.aws_region}-${local.environment}-service"
   ecs_service_bootstrap_task_definition_name = "${local.app_name}-${local.aws_region}-${local.environment}-bootstrap-td"
   ecs_service_task_definition_name           = "${local.app_name}-${local.aws_region}-${local.environment}-td"
+  ecs_td_gh_secret_name = "DEV_AWS_VLCM_ECS_BACKEND_TASK_DEFINITION"
+  ecs_service_gh_secret_name = "DEV_AWS_VLCM_ECS_SERVICE"
+  ecs_td_update_role_gh_secret_name = "DEV_AWS_ECS_UPDATE_ROLE"
 
   repository_prefix = "${local.aws_account_id}.dkr.ecr.${local.aws_region}.amazonaws.com"
   repository_url = {
