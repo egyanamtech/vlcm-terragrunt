@@ -50,7 +50,9 @@ locals {
   # Names of the S3 buckets that will hold the frontend stuff
   www_bucket_name = "${local.www_frontend_subdomain}.${local.site_domain}"
   bucket_name     = "${local.frontend_subdomain}.${local.site_domain}"
-
+  s3_bucket_gh_secret_name = "DEV_AWS_VLCM_FRONTEND_S3_BUCKET"
+  s3_update_role_gh_secret_name = "DEV_AWS_S3_ROLE"
+  
   # Website Allowed origins
   allowed_origins = ["${local.api_subdomain}.${local.site_domain}"]
 
