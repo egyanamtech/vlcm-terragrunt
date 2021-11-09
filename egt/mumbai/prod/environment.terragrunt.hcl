@@ -51,15 +51,15 @@ locals {
   # Names of the S3 buckets that will hold the frontend stuff
   www_bucket_name = "${local.www_frontend_subdomain}.${local.site_domain}"
   bucket_name     = local.site_domain
-  s3_bucket_gh_secret_name = "DEV_AWS_VLCM_FRONTEND_S3_BUCKET"
-  s3_update_role_gh_secret_name = "DEV_AWS_S3_ROLE"
+  s3_bucket_gh_secret_name = "PROD_AWS_VLCM_FRONTEND_S3_BUCKET"
+  s3_update_role_gh_secret_name = "PROD_AWS_S3_ROLE"
 
   # Website Allowed origins
   allowed_origins = ["${local.api_subdomain}.${local.site_domain}"]
 
   # Name of ECS Cluster
   ecs_cluster_name = "${local.app_name}-${local.environment}-${local.aws_region}-cluster"
-  ecs_cluster_gh_secret_name = "DEV_AWS_VLCM_ECS_CLUSTER"
+  ecs_cluster_gh_secret_name = "PROD_AWS_VLCM_ECS_CLUSTER"
 
   # Name of the ALB to be created
   alb_name = "${local.app_name}-${local.environment}-${local.aws_region}-alb"
