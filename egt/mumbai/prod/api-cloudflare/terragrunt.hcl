@@ -15,6 +15,7 @@ inputs = {
   cname     = dependency.alb.outputs.alb_dns_name
   proxied   = local.env.locals.api_proxied
   name = "api-cloudflare"
+  cloudflare_gh_name = local.env.locals.api_cloudflare_secret_name
 }
 
 dependency "alb" {
