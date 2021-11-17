@@ -38,6 +38,7 @@ locals {
   # Cloudflare for backend API stuff
   api_proxied   = false
   api_subdomain = "${local.site_prefix}api"
+  api_cloudflare_secret_name = "PROD_API_URL"
 
   # Cloudflare for frontend website stuff
   frontend_proxied   = true
@@ -50,12 +51,15 @@ locals {
   # Names of the S3 buckets that will hold the frontend stuff
   www_bucket_name = "${local.www_frontend_subdomain}.${local.site_domain}"
   bucket_name     = local.site_domain
+  s3_bucket_gh_secret_name = "PROD_AWS_VLCM_FRONTEND_S3_BUCKET"
+  s3_update_role_gh_secret_name = "PROD_AWS_S3_ROLE"
 
   # Website Allowed origins
   allowed_origins = ["${local.api_subdomain}.${local.site_domain}"]
 
   # Name of ECS Cluster
   ecs_cluster_name = "${local.app_name}-${local.environment}-${local.aws_region}-cluster"
+  ecs_cluster_gh_secret_name = "PROD_AWS_VLCM_ECS_CLUSTER"
 
   # Name of the ALB to be created
   alb_name = "${local.app_name}-${local.environment}-${local.aws_region}-alb"
@@ -71,6 +75,9 @@ locals {
   ecs_service_ecs_service_name               = "${local.app_name}-${local.aws_region}-${local.environment}-service"
   ecs_service_bootstrap_task_definition_name = "${local.app_name}-${local.aws_region}-${local.environment}-bootstrap-td"
   ecs_service_task_definition_name           = "${local.app_name}-${local.aws_region}-${local.environment}-td"
+  ecs_td_gh_secret_name = "PROD_AWS_VLCM_ECS_BACKEND_TASK_DEFINITION"
+  ecs_service_gh_secret_name = "PROD_AWS_VLCM_ECS_SERVICE"
+  ecs_td_update_role_gh_secret_name = "PROD_AWS_ECS_UPDATE_ROLE"
 
   repository_prefix = "${local.aws_account_id}.dkr.ecr.${local.aws_region}.amazonaws.com"
   repository_url = {

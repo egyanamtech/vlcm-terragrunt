@@ -6,7 +6,7 @@ include {
 }
 terraform {
   # source = "../cloudflare"
-  source = "git::ssh://git@github.com/egyanamtech/vlcm-terraform.git//cloudflare?ref=v0.0.5"
+  source = "git::ssh://git@github.com/egyanamtech/vlcm-terraform.git//cloudflare?ref=v0.0.6"
 }
 
 inputs = {

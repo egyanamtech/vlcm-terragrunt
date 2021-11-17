@@ -7,7 +7,7 @@ include {
 }
 terraform {
   # source = "../cloudflare"
-  source = "git::ssh://git@github.com/egyanamtech/vlcm-terraform.git//cloudflare?ref=v0.0.5"
+  source = "git::ssh://git@github.com/egyanamtech/vlcm-terraform.git//cloudflare?ref=v0.0.6"
 }
 
 inputs = {
@@ -15,6 +15,7 @@ inputs = {
   cname     = dependency.alb.outputs.alb_dns_name
   proxied   = local.env.locals.api_proxied
   name = "api-cloudflare"
+  cloudflare_gh_name = local.env.locals.api_cloudflare_secret_name
 }
 
 dependency "alb" {
