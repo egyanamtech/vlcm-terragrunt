@@ -17,7 +17,7 @@ inputs = {
   bootstrap_task_definition_name = local.env.locals.ecs_service_bootstrap_task_definition_name
   task_definition_name           = local.env.locals.ecs_service_task_definition_name
   environment = [
-    { "name" : "DJANGO_ALLOWED_HOSTS", "value" : "['${local.env.locals.api_subdomain}.${local.env.locals.site_dpmain}', '${dependency.alb.outputs.alb_dns_name}']" },
+    { "name" : "DJANGO_ALLOWED_HOSTS", "value" : "['${local.env.locals.api_subdomain}.${local.env.locals.site_domain}', '${dependency.alb.outputs.alb_dns_name}']" },
     { "name" : "DJANGO_SECRET_KEY", "value" : "'insecure'" },
     { "name" : "USE_S3", "value" : "True" },
     { "name" : "ON_ECS", "value" : "True" },
