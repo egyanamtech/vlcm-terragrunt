@@ -17,9 +17,10 @@ inputs = {
   bootstrap_task_definition_name = local.env.locals.ecs_service_bootstrap_task_definition_name
   task_definition_name           = local.env.locals.ecs_service_task_definition_name
   environment = [
-    { "name" : "DJANGO_ALLOWED_HOSTS", "value" : "'*'" },
+    { "name" : "DJANGO_ALLOWED_HOSTS", "value" : "['${local.env.locals.api_subdomain}.${local.env.locals.site_dpmain}', '${dependency.alb.outputs.alb_dns_name}']" },
     { "name" : "DJANGO_SECRET_KEY", "value" : "'insecure'" },
     { "name" : "USE_S3", "value" : "True" },
+    { "name" : "ON_ECS", "value" : "True" },
     { "name" : "DEBUG", "value" : "True" }
   ]
   secrets = [
@@ -113,6 +114,7 @@ dependency "alb" {
     alb_arn = "arn:aws:ecs:ap-south-1:123456789012:alb:mock_alb_arn"
     # alb_arn = "arn:aws:alb:mock_alb_arn:::"
     alb_sg = "mock_alb_sg"
+    alb_dns_name = "mock.alb.name"
   }
 }
 
