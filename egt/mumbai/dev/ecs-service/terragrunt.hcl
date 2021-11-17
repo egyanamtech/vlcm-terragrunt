@@ -21,7 +21,7 @@ inputs = {
     { "name" : "DJANGO_SECRET_KEY", "value" : "'insecure'" },
     { "name" : "USE_S3", "value" : "True" },
     { "name" : "ON_ECS", "value" : "True" },
-    { "name" : "DEBUG", "value" : "True" }
+    { "name" : "DEBUG", "value" : "False" }
   ]
   secrets = [
     {
