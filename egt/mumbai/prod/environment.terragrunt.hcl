@@ -73,7 +73,6 @@ locals {
   ecs_service_cpu_multiplier                 = 2
   ecs_service_memory_multiplier              = 1
   ecs_service_ecs_service_name               = "${local.app_name}-${local.aws_region}-${local.environment}-service"
-  ecs_service_bootstrap_task_definition_name = "${local.app_name}-${local.aws_region}-${local.environment}-bootstrap-td"
   ecs_service_task_definition_name           = "${local.app_name}-${local.aws_region}-${local.environment}-td"
   ecs_td_gh_secret_name = "PROD_AWS_VLCM_ECS_BACKEND_TASK_DEFINITION"
   ecs_service_gh_secret_name = "PROD_AWS_VLCM_ECS_SERVICE"

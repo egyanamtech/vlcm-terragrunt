@@ -14,7 +14,6 @@ inputs = {
   cpu_multiplier                 = local.env.locals.ecs_service_cpu_multiplier
   memory_multiplier              = local.env.locals.ecs_service_memory_multiplier
   ecs_service_name               = local.env.locals.ecs_service_ecs_service_name
-  bootstrap_task_definition_name = local.env.locals.ecs_service_bootstrap_task_definition_name
   task_definition_name           = local.env.locals.ecs_service_task_definition_name
   environment = [
     { "name" : "DJANGO_ALLOWED_HOSTS", "value" : "${local.env.locals.api_subdomain}.${local.env.locals.site_domain}, ${dependency.alb.outputs.alb_dns_name}" },
