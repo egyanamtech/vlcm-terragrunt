@@ -6,7 +6,7 @@ include {
 }
 terraform {
   # source = "../ecs-service"
-  source = "git::ssh://git@github.com/egyanamtech/vlcm-terraform.git//ecs-service?ref=v0.0.6"
+  source = "git::ssh://git@github.com/egyanamtech/vlcm-terraform.git//ecs-service?ref=v0.0.8"
 }
 
 inputs = {
