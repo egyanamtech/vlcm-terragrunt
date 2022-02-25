@@ -6,7 +6,7 @@ include {
 }
 terraform {
   # source = "../ecs-cluster"
-  source = "git::ssh://git@github.com/egyanamtech/vlcm-terraform.git//ecs-cluster?ref=v0.0.8"
+  source = "git::ssh://git@github.com/egyanamtech/vlcm-terraform.git//ecs-cluster?ref=v0.0.10"
 }
 
 inputs = {
