@@ -6,7 +6,7 @@ include {
 }
 terraform {
   # source = "../bastion"
-  source = "git::ssh://git@github.com/egyanamtech/vlcm-terraform.git//bastion?ref=v0.0.12"
+  source = "git::ssh://git@github.com/egyanamtech/vlcm-terraform.git//bastion?ref=v0.0.13"
 }
 
 inputs = {
