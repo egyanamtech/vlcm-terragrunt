@@ -14,8 +14,8 @@ inputs = {
   vpc_id          = dependency.network.outputs.vpc_id
   subnet_id = dependency.network.outputs.public_subnets[0]
   key_name = local.env.locals.key_name
-  account_id = local.account.locals.aws_account_id
-  aws_region     = local.region.locals.aws_region
+  account_id = local.env.locals.aws_account_id
+  aws_region     = local.env.locals.aws_region
 }
 dependency "network" {
   config_path = "../network"
