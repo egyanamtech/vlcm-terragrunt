@@ -69,6 +69,8 @@ locals {
 
   parameter_group = "${local.app_name}/${local.environment}"
 
+  key_name = "ms-egt"
+
   # data for ECS Service
   ecs_service_cpu_multiplier                 = 2
   ecs_service_memory_multiplier              = 1
