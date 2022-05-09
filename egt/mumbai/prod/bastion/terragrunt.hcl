@@ -25,7 +25,7 @@ dependency "network" {
 
   mock_outputs = {
     vpc_id                = "mock_vpc_id"
-    vpc_cidr_block = "mock_cidr_block"
+    vpc_cidr = "0.0.0.0/0"
     public_subnets = ["mock_subnet_id_1", "mock_subnet_id_2"]
   }
 }
